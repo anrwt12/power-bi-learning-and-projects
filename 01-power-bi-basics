@@ -243,3 +243,143 @@ I also learned about:
 
 **Main takeaway:** Good dashboards depend on good-quality data. Before creating visualizations, the data should be properly checked, cleaned, transformed, and modeled.
 
+
+
+
+# Day 1 — Power BI Learning Notes (Continued)
+
+## 9. Handling Null/Missing Values
+
+When we find null or missing values, we generally have two approaches:
+
+1. **Remove the records containing missing values**
+2. **Fix or replace the missing values**
+
+The correct approach depends on the **dataset size, percentage of missing values, and business importance of the affected data**.
+
+### Scenario 1 — Large Dataset + Few Null Values
+
+If the dataset is very large and the percentage of null values is very small, for example **less than 1%**, we may consider removing those records if doing so does not affect the analysis.
+
+**Example:**
+
+A dataset contains 1,000,000 records, but only 5,000 records have missing values.
+
+If those records are not important to the business analysis, removing them may have very little overall impact.
+
+### Scenario 2 — Small Dataset + Many Null Values
+
+If the dataset is small and a significant percentage of values are missing, simply deleting those records can cause substantial data loss.
+
+In this situation, it may be better to **investigate and replace/impute the missing values** where a valid business rule exists.
+
+Possible methods include:
+
+* Mean
+* Median
+* Mode
+* Business-rule-based replacement
+* Other appropriate statistical imputation methods
+
+### Important Consideration — Data Bias
+
+Replacing missing values can also introduce **bias** if the replacement method is inappropriate.
+
+Therefore, before deciding whether to remove or replace missing values, we should consider:
+
+* How much data is missing?
+* Why is the data missing?
+* Is the column important?
+* How will removing the records affect the analysis?
+* Is there a reliable method for estimating the missing values?
+
+**Key principle:**
+
+> Do not automatically remove or replace missing data. Choose the method based on the data and business requirement.
+
+---
+
+# 10. Removing Duplicate Data
+
+Duplicate records can affect analysis and lead to incorrect results.
+
+For example, if the same transaction appears twice, total sales or order counts may become incorrect.
+
+### Removing Duplicate Rows
+
+If complete rows are duplicated, we can select the appropriate option in **Power Query** to remove duplicate rows.
+
+This keeps only one occurrence of the duplicate record.
+
+### Removing Duplicate Values from a Column
+
+If we need to identify unique values in a particular column:
+
+1. Select the column.
+2. Right-click the column header.
+3. Select **Remove Duplicates**.
+
+Power Query will retain the first occurrence and remove subsequent duplicate values according to the selected column(s).
+
+**Important:** We should only remove duplicates when we are sure they are actual duplicates. Two rows having the same value in one column does not necessarily mean the entire records are duplicates.
+
+---
+
+# 11. Checking Data Quality
+
+Power Query provides useful tools for checking the quality of columns.
+
+In the **View** tab, we can enable **Column Quality**.
+
+Column Quality provides information such as:
+
+* **Valid** — values that meet the expected requirements
+* **Error** — values that contain errors
+* **Empty** — missing/null values
+
+This helps us quickly identify data-quality problems before performing analysis.
+
+---
+
+# 12. Changing Data Types
+
+Every column should have an appropriate data type.
+
+For example:
+
+| Column        | Appropriate Data Type |
+| ------------- | --------------------- |
+| Customer Name | Text                  |
+| Quantity      | Whole Number          |
+| Price         | Decimal Number        |
+| Order Date    | Date                  |
+| Revenue       | Decimal Number        |
+| Delivered     | True/False            |
+
+We can change a column's data type by selecting the column and using the **data type option in Power Query**.
+
+Correct data types are important because they affect:
+
+* Calculations
+* Sorting
+* Filtering
+* Date analysis
+* DAX calculations
+* Visualizations
+
+For example, if a date column is incorrectly stored as text, Power BI may not be able to perform proper date-based analysis.
+
+---
+
+# Key Learning
+
+Today I learned that data cleaning is not simply about deleting incorrect data.
+
+Before removing or fixing data, we should understand **how much data is affected and why it is missing or incorrect**.
+
+A basic decision process is:
+
+**Identify problem → Measure impact → Understand the reason → Choose Remove or Fix → Validate the result**
+
+This helps maintain data quality while reducing the risk of unnecessary data loss or bias.
+
