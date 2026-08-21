@@ -1,1 +1,245 @@
+# Day 1 — Power BI Learning Notes
+
+## 1. What is Power BI?
+
+Power BI is a **Business Intelligence (BI) and data visualization tool** developed by Microsoft. It helps organizations connect to data, transform and analyze it, create interactive reports and dashboards, and generate insights that support better business decisions.
+
+---
+
+## 2. Power BI Main Views
+
+### Report View
+
+Report View is mainly used to **create interactive reports and dashboards**.
+
+We can use different visualizations such as:
+
+* Bar charts
+* Column charts
+* Line charts
+* Pie/donut charts
+* Cards
+* Tables
+* Slicers
+* Maps
+
+### Table/Data View
+
+Table View allows us to **see and inspect the data** that has been loaded into Power BI.
+
+We can:
+
+* View rows and columns
+* Check values
+* Understand the structure of the data
+* Check columns and data types
+
+### Model View
+
+Model View is used to **connect and manage relationships between different tables**.
+
+It helps us understand how tables are connected and how data will interact when creating reports.
+
+---
+
+## 3. Fields/Data Pane, Visualizations and Filters
+
+After loading data into Power BI, different panes are available on the right side.
+
+### Data/Fields Pane
+
+This shows the **tables and columns** that have been loaded into Power BI.
+
+### Visualizations Pane
+
+This contains different types of charts and visual elements that can be used to create reports.
+
+### Filters Pane
+
+The Filters pane allows us to **filter the data displayed in a visual, page, or entire report**.
+
+For example, we can filter a sales chart by:
+
+* Country
+* Product
+* Date
+* Category
+
+---
+
+# 4. Getting Data
+
+Power BI provides a **Get Data** option through which we can connect to different data sources such as Excel, CSV and databases.
+
+After selecting and loading a data source, we generally have two choices:
+
+### Load
+
+Loads the data directly into Power BI.
+
+### Transform Data
+
+Opens the **Power Query Editor**, where we can clean and transform the data before loading it into the Power BI data model.
+
+---
+
+# 5. Power Query Editor
+
+Power Query is used for **data cleaning and transformation** before the data is used for analysis and visualization.
+
+The Power Query Editor provides many options for transforming data.
+
+### Applied Steps
+
+The **Applied Steps** section records the transformations performed on the data.
+
+For example:
+
+1. Changed data type
+2. Removed columns
+3. Removed duplicates
+4. Filtered rows
+5. Renamed columns
+
+Each transformation becomes a step, and previous steps can be edited or removed if required.
+
+### Query Pane
+
+The left side shows the **queries/tables** that we are currently working with.
+
+---
+
+# 6. M Language
+
+**M** is the language used by Power Query to perform data transformation and cleaning tasks.
+
+When transformations are performed through the Power Query interface, Power BI generates the corresponding **M code** in the background.
+
+M can also be used directly to create or modify transformation steps.
+
+---
+
+# 7. Basic Data Cleaning Techniques
+
+Before creating visualizations, the data should be checked and cleaned properly.
+
+### A. Check Headers
+
+First, we should verify that:
+
+* Column names are correct
+* The correct row is being used as the header
+* Headers are not duplicated or incorrect
+
+If required, we can use **Use First Row as Headers**.
+
+### B. Check Data Types
+
+We should check whether each column has the correct data type.
+
+Common data types include:
+
+* Text
+* Whole Number
+* Decimal Number
+* Date
+* Date/Time
+* True/False
+
+Incorrect data types can cause problems during calculations and visualization.
+
+### C. Transform Data Types
+
+Power Query allows us to convert a column from one data type to another when required.
+
+For example:
+
+**Text → Date**
+
+or
+
+**Text → Whole Number**
+
+### D. Remove Unwanted Columns
+
+Columns that are not required for analysis can be removed to keep the dataset clean and efficient.
+
+### E. Merge Columns
+
+Multiple columns can be combined when required.
+
+For example:
+
+**First Name + Last Name → Full Name**
+
+### F. Split Columns
+
+A column can also be separated into multiple columns.
+
+For example:
+
+**Full Name → First Name + Last Name**
+
+### G. Remove Duplicates
+
+Duplicate records can be identified and removed when they are not required for analysis.
+
+### H. Remove Unwanted Rows/Data
+
+Rows that are irrelevant to the business problem can be filtered or removed.
+
+This helps ensure that the final analysis is based only on relevant data.
+
+---
+
+# 8. Handling Null/Missing Values
+
+Null or missing values should be checked before performing analysis.
+
+There are generally two approaches:
+
+### Option 1 — Fix/Replace the Missing Values
+
+If the correct value can be identified, the missing value can be replaced appropriately.
+
+For example:
+
+* Replace missing category with a known category
+* Replace missing numerical value using an appropriate business rule
+
+### Option 2 — Remove the Records
+
+If the missing information cannot be reasonably corrected and the records are not useful for analysis, the affected rows may be removed.
+
+However, removing rows can result in **loss of data**, so the decision should be based on the business requirement and the reason for the missing values.
+
+---
+
+# Key Learning from Day 1
+
+Today I learned the basic structure and workflow of Power BI:
+
+**Get Data → Transform/Clean Data → Load Data → Create Model → Create Visualizations → Apply Filters → Build Reports**
+
+I also learned about:
+
+* Power BI as a Business Intelligence tool
+* Report View
+* Table/Data View
+* Model View
+* Data/Fields pane
+* Visualizations pane
+* Filters pane
+* Get Data
+* Load vs Transform Data
+* Power Query Editor
+* Applied Steps
+* M language
+* Data types
+* Headers
+* Merging and splitting columns
+* Removing duplicates and unwanted data
+* Handling null/missing values
+
+**Main takeaway:** Good dashboards depend on good-quality data. Before creating visualizations, the data should be properly checked, cleaned, transformed, and modeled.
 
